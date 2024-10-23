@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Про себе та моє хобі</title>
+    <meta name="description" content="Особиста сторінка з інформацією про себе та мої захоплення.">
+    <meta name="keywords" content="особиста сторінка, хобі, програмування">
+    <style>
+        body {
+            background-color: #EEFDFD; /* Колір фону */
+            color: #333333; /* Колір тексту */
+            font-family: Arial, sans-serif; /* Гарнітура */
+            margin: 20px;
+            text-align: justify; /* Вирівнювання по ширині */
+        }
+        h1 {
+            color: #2e8b57;
+        }
+        h2 {
+            color: #6a5acd;
+        }
+        .signature {
+            margin-top: 50px;
+            font-weight: bold;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Про себе</h1>
+    <p>
+        Вітаю! Мене звати <strong><em>Михайло Котелевський</em></strong>. Я студент факультету інформаційних технологій.
+        Мені подобається вивчати нові технології та застосовувати їх на практиці.
+        У вільний час я пишу різні програми на <u>C#</u> та <u>Python</u>.
+    </p>
+    <p>
+        Я завжди відкритий до нових знайомств та можливостей.
+        Люблю працювати в команді та досягати поставлених цілей.
+        Моя життєва позиція – робити все якнайкраще.
+    </p>
+
+    <h1>Моє хобі</h1>
+    <p>
+        Одним із моїх головних захоплень є програмування.
+        Я вивчаю різні мови та технології, щоб стати професіоналом у своїй сфері.
+        Програмування для мене – це спосіб вираження своїх ідей та рішень.
+    </p>
+
+    <h2>Програмування</h2>
+    <pre>
+        <code>
+    // Приклад програми на C# - міні консольний калькулятор
+    using System;
+    
+    class Calculator
+    {
+        static void Main()
+        {
+            Console.WriteLine("Міні калькулятор");
+            Console.Write("Введіть перше число: ");
+            double num1 = Convert.ToDouble(Console.ReadLine());
+    
+            Console.Write("Введіть оператор (+, -, *, /): ");
+            char op = Console.ReadKey().KeyChar;
+            Console.WriteLine();
+    
+            Console.Write("Введіть друге число: ");
+            double num2 = Convert.ToDouble(Console.ReadLine());
+    
+            double result;
+    
+            switch (op)
+            {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    if (num2 != 0)
+                        result = num1 / num2;
+                    else
+                    {
+                        Console.WriteLine("Ділення на нуль неможливе.");
+                        return;
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Невідомий оператор.");
+                    return;
+            }
+    
+            Console.WriteLine("Результат: " + result);
+        }
+    }
+        </code>
+    </pre>
+
+    <!-- Кнопка "Мої гіперпосилання" -->
+    <p style="text-align: center; margin-top: 30px;">
+        <a href="KotelevskyiLab05-3.html" style="
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2e8b57;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        ">Мої гіперпосилання</a>
+    </p>
+
+    <div class="signature">
+        Студент групи 305-ТН Котелевський М.Ю.
+    </div>
+
+</body>
+</html>

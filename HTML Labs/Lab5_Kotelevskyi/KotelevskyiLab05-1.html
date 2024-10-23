@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Розклад занять груп</title>
+    <style>
+        body {
+            background-color: #f0f8ff; /* Світло-блакитний фон */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50; /* Зелений колір */
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 2em;
+        }
+        nav {
+            background-color: #333;
+        }
+        nav table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        nav td {
+            text-align: center;
+            padding: 14px 16px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+            border-radius: 4px;
+            padding: 14px 16px;
+        }
+        .content {
+            padding: 20px;
+        }
+        table.schedule {
+            width: 75%;
+            margin: 40px auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        table.schedule th, table.schedule td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        table.schedule th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        table.schedule caption {
+            caption-side: top;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #e74c3c; /* Червоний колір */
+        }
+        .day-section {
+            margin-top: 60px;
+        }
+        .day-section h2 {
+            color: #3498db; /* Синій колір */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .day-section table {
+            width: 75%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        .day-section th, .day-section td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .day-section th {
+            background-color: #f9f9f9;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Адаптивність */
+        @media (max-width: 768px) {
+            nav table, table.schedule, .day-section table {
+                width: 100%;
+            }
+            table.schedule, .day-section table {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Розклад занять груп
+    </header>
+
+    <!-- Навігаційне меню з днями тижня -->
+    <nav>
+        <table>
+            <tr>
+                <td><a href="#Понеділок">Понеділок</a></td>
+                <td><a href="#Вівторок">Вівторок</a></td>
+                <td><a href="#Середа">Середа</a></td>
+                <td><a href="#Четвер">Четвер</a></td>
+                <td><a href="#П’ятниця">П’ятниця</a></td>
+                <td><a href="#Субота">Субота</a></td>
+            </tr>
+        </table>
+    </nav>
+
+    <div class="content">
+        <!-- Основний розклад з усіма днями -->
+        <table class="schedule">
+            <caption>Розклад занять груп</caption>
+            <thead>
+                <tr>
+                    <th>Час</th>
+                    <th>Понеділок</th>
+                    <th>Вівторок</th>
+                    <th>Середа</th>
+                    <th>Четвер</th>
+                    <th>П’ятниця</th>
+                    <th>Субота</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>08:00 - 09:30</td>
+                    <td>Математика<br>Іваненко І.Н.</td>
+                    <td>Фізика<br>Петренко П.П.</td>
+                    <td>Хімія<br>Сидорова О.О.</td>
+                    <td>Історія<br>Коваленко С.С.</td>
+                    <td>Література<br>Гнатюк Л.Л.</td>
+                    <td>Вільно</td>
+                </tr>
+                <tr>
+                    <td>10:00 - 11:30</td>
+                    <td>Фізкультура<br>Мельник В.В.</td>
+                    <td>Біологія<br>Литвиненко Т.Т.</td>
+                    <td>Математика<br>Іваненко І.Н.</td>
+                    <td>Географія<br>Грищук М.М.</td>
+                    <td>Англійська<br>Семенюк Ю.Ю.</td>
+                    <td>Вільно</td>
+                </tr>
+                <tr>
+                    <td>12:00 - 13:30</td>
+                    <td>Література<br>Гнатюк Л.Л.</td>
+                    <td>Математика<br>Іваненко І.Н.</td>
+                    <td>Фізика<br>Петренко П.П.</td>
+                    <td>Хімія<br>Сидорова О.О.</td>
+                    <td>Історія<br>Коваленко С.С.</td>
+                    <td>Вільно</td>
+                </tr>
+                <tr>
+                    <td>14:00 - 15:30</td>
+                    <td>Інформатика<br>Бойко Р.Р.</td>
+                    <td>Фізкультура<br>Мельник В.В.</td>
+                    <td>Біологія<br>Литвиненко Т.Т.</td>
+                    <td>Англійська<br>Семенюк Ю.Ю.</td>
+                    <td>Географія<br>Грищук М.М.</td>
+                    <td>Вільно</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Розділи для кожного дня тижня -->
+        <!-- Понеділок -->
+        <section class="day-section" id="Понеділок">
+            <h2>Понеділок</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Час</th>
+                        <th>Предмет</th>
+                        <th>Викладач</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:00 - 09:30</td>
+                        <td>Математика</td>
+                        <td>Іваненко І.Н.</td>
+                    </tr>
+                    <tr>
+                        <td>10:00 - 11:30</td>
+                        <td>Фізкультура</td>
+                        <td>Мельник В.В.</td>
+                    </tr>
+                    <tr>
+                        <td>12:00 - 13:30</td>
+                        <td>Література</td>
+                        <td>Гнатюк Л.Л.</td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 15:30</td>
+                        <td>Інформатика</td>
+                        <td>Бойко Р.Р.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Вівторок -->
+        <section class="day-section" id="Вівторок">
+            <h2>Вівторок</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Час</th>
+                        <th>Предмет</th>
+                        <th>Викладач</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:00 - 09:30</td>
+                        <td>Фізика</td>
+                        <td>Петренко П.П.</td>
+                    </tr>
+                    <tr>
+                        <td>10:00 - 11:30</td>
+                        <td>Біологія</td>
+                        <td>Литвиненко Т.Т.</td>
+                    </tr>
+                    <tr>
+                        <td>12:00 - 13:30</td>
+                        <td>Математика</td>
+                        <td>Іваненко І.Н.</td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 15:30</td>
+                        <td>Фізкультура</td>
+                        <td>Мельник В.В.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Середа -->
+        <section class="day-section" id="Середа">
+            <h2>Середа</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Час</th>
+                        <th>Предмет</th>
+                        <th>Викладач</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:00 - 09:30</td>
+                        <td>Хімія</td>
+                        <td>Сидорова О.О.</td>
+                    </tr>
+                    <tr>
+                        <td>10:00 - 11:30</td>
+                        <td>Математика</td>
+                        <td>Іваненко І.Н.</td>
+                    </tr>
+                    <tr>
+                        <td>12:00 - 13:30</td>
+                        <td>Фізика</td>
+                        <td>Петренко П.П.</td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 15:30</td>
+                        <td>Біологія</td>
+                        <td>Литвиненко Т.Т.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Четвер -->
+        <section class="day-section" id="Четвер">
+            <h2>Четвер</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Час</th>
+                        <th>Предмет</th>
+                        <th>Викладач</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:00 - 09:30</td>
+                        <td>Історія</td>
+                        <td>Коваленко С.С.</td>
+                    </tr>
+                    <tr>
+                        <td>10:00 - 11:30</td>
+                        <td>Хімія</td>
+                        <td>Сидорова О.О.</td>
+                    </tr>
+                    <tr>
+                        <td>12:00 - 13:30</td>
+                        <td>Географія</td>
+                        <td>Грищук М.М.</td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 15:30</td>
+                        <td>Англійська</td>
+                        <td>Семенюк Ю.Ю.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- П’ятниця -->
+        <section class="day-section" id="П’ятниця">
+            <h2>П’ятниця</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Час</th>
+                        <th>Предмет</th>
+                        <th>Викладач</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:00 - 09:30</td>
+                        <td>Література</td>
+                        <td>Гнатюк Л.Л.</td>
+                    </tr>
+                    <tr>
+                        <td>10:00 - 11:30</td>
+                        <td>Англійська</td>
+                        <td>Семенюк Ю.Ю.</td>
+                    </tr>
+                    <tr>
+                        <td>12:00 - 13:30</td>
+                        <td>Історія</td>
+                        <td>Коваленко С.С.</td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 15:30</td>
+                        <td>Географія</td>
+                        <td>Грищук М.М.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Субота -->
+        <section class="day-section" id="Субота">
+            <h2>Субота</h2>
+            <p style="text-align: center; color: #555;">Вільно</p>
+        </section>
+    </div>
+
+    <footer>
+        &copy; Я зробив цей розклад і пишаюся собою.
+    </footer>
+
+</body>
+</html>

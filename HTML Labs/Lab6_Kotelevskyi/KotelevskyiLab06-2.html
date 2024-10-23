@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Використання сенсорних зображень</title>
+    <style>
+        body {
+            background-color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        img {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <map name="map2">
+        <area shape="rect" coords="0,0,300,50" href="#" title="Блакитне небо">
+        <area shape="poly" coords="120,180,210,180,150,150" href="#" title="Човен">
+        <area shape="poly" coords="0,20,50,20,30,140,0,120,0,20" href="#" title="Скеля">
+        <area shape="circle" coords="50,235,25" href="#" title="Камінь">
+    </map>
+
+    <div>
+        <img src="../image/vodopad.jpeg" width="300" height="260" usemap="#map2" alt="Водоспад">
+    </div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Батьківщина - Україна</title>
+    <!-- Підключення CSS файлу -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Хедер -->
+    <header>
+        <h1>Батьківщина - Україна</h1>
+    </header>
+
+    <!-- Основний контент -->
+    <main>
+        <!-- Галерея Міст -->
+        <div class="gallery">
+            <div class="photo" data-city="kyiv">
+                <img src="/Task06-3/image/kyiv.jpg" alt="Київ">
+                <div class="popup">
+                    Київ - столиця України, відома своєю історією та сучасною архітектурою.
+                </div>
+            </div>
+            <div class="photo" data-city="lviv">
+                <img src="/Task06-3/image/lviv.jpg" alt="Львів">
+                <div class="popup">
+                    Львів - культурна столиця Західної України з багатою архітектурною спадщиною.
+                </div>
+            </div>
+            <div class="photo" data-city="poltava">
+                <img src="/Task06-3/image/poltava.jpg" alt="Полтава">
+                <div class="popup">
+                    Полтава - історичне місто центральної України, відоме битвою 1709 року.
+                </div>
+            </div>
+        </div>
+
+        <!-- Про Україну -->
+        <section class="about">
+            <img src="/Task06-3/image/map.jpg" alt="Мапа України">
+            <div class="about-text">
+                <h2>Про Україну</h2>
+                <p>
+                    Україна — велика країна у Східній Європі, відома своєю багатою історією, культурою та природними красотами. Від Західних гір до Чорноморського узбережжя, Україна пропонує різноманітні пейзажі та традиції. Кожен регіон має свою унікальну спадщину та особливості, що робить країну різноманітною та цікавою для відвідувачів.
+                </p>
+            </div>
+        </section>
+
+        <!-- Цікаві Факти -->
+        <section class="facts">
+            <h2>Цікаві Факти про Україну</h2>
+            <ul class="fact-list">
+                <li>
+                    <h3>Незалежність</h3>
+                    <p>Україна проголосила незалежність від Радянського Союзу 24 серпня 1991 року.</p>
+                </li>
+                <li>
+                    <h3>Мова</h3>
+                    <p>Українська мова є однією з найстаріших слов'янських мов і офіційною мовою України.</p>
+                </li>
+                <li>
+                    <h3>Природні Чудеса</h3>
+                    <p>Карпати — одні з найкрасивіших гірських ланцюгів у Європі, відомі своєю природною красою та різноманіттям флори та фауни.</p>
+                </li>
+                <li>
+                    <h3>Культурна Спадщина</h3>
+                    <p>Україна має понад 50 об'єктів Світової спадщини ЮНЕСКО, включаючи історичні міста та природні парки.</p>
+                </li>
+                <li>
+                    <h3>Космічні Досягнення</h3>
+                    <p>Олена Кишеніна стала першою українською тенісисткою, яка потрапила до рейтингу топ-10 світу.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Карта України -->
+        <section class="map">
+            <h2>Карта України</h2>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2829.0430471830687!2d30.523400615853273!3d50.4501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce6efc2c4bf1%3A0x7cdd4f6f9b6d4d9c!2z0J_RgNC-0YHRgtC40YHQvtCy0Lwg0K3QmtC-0LrQsNC70YzQvdCwLCDQndC-0LvQuNC90YfQutCw0YLQsNC90YLRjCDQotC40YHRgdGC0YPRgdC60LjQuCDQodC40L3QvdC40Y8g0KbQtdC90LjQuCDQk9C-0YDQuNC00YDRgNGC0LjRgiDQv9C10LvRjNC90LjQsCwg0LTQtdGA0YHQutC40LUg0YHRjCDQv9C10LvRjNC90LjQuCDQtNC10YHRgtGD0Yw!5e0!3m2!1suk!2sua!4v1685587476154!5m2!1suk!2sua" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <p>&copy; 2024 Батьківщина - Україна. Всі права захищені.</p>
+    </footer>
+
+    <!-- Модальне вікно -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-body"></p>
+        </div>
+    </div>
+
+    <!-- Скрипти -->
+    <script>
+        const modal = document.getElementById("myModal");
+        const modalTitle = document.getElementById("modal-title");
+        const modalBody = document.getElementById("modal-body");
+        const closeBtn = document.getElementsByClassName("close")[0];
+
+        const cityData = {
+            kyiv: {
+                title: "Київ",
+                body: "Київ — столиця України, розташована на берегах річки Дніпро. Це велике культурне, економічне та політичне центри країни. Серед визначних пам'яток — Софійський собор, Києво-Печерська лавра та Майдан Незалежності."
+            },
+            lviv: {
+                title: "Львів",
+                body: "Львів — місто на заході України, відоме своєю архітектурою в стилі ренесанс, готики та бароко. Місто славиться своєю культурною життям, численними кафе, музеями та театрами. Львів також є важливим освітнім центром країни."
+            },
+            poltava: {
+                title: "Полтава",
+                body: "Полтава — історичне місто в центральній Україні, відоме битвою 1709 року між військами Петрика Великого та Богдана Хмельницького. Сьогодні Полтава є важливим промисловим і культурним центром, з численними музеями та парками."
+            }
+        };
+
+        document.querySelectorAll('.photo').forEach(photo => {
+            photo.addEventListener('click', () => {
+                const city = photo.getAttribute('data-city');
+                if(cityData[city]) {
+                    modalTitle.textContent = cityData[city].title;
+                    modalBody.textContent = cityData[city].body;
+                    modal.style.display = "block";
+                }
+            });
+        });
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
