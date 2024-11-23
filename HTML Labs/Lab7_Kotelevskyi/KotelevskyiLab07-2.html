@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма з усіма елементами</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-container h2 {
+            margin-top: 0;
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            color: #555;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .gender-options,
+        .course-options,
+        .subject-options {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .gender-options label,
+        .subject-options label {
+            margin-right: 20px;
+        }
+        .buttons {
+            text-align: center;
+        }
+        input[type="submit"],
+        input[type="reset"],
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            margin: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="reset"],
+        button.reset-button {
+            background-color: #f44336;
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover,
+        button:hover {
+            opacity: 0.9;
+        }
+        .file-input {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Навіть не уявляю, навіщо тут буквально 2 однакових завдання :|</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="username">Користувач:</label>
+                <input id="username" name="username" type="text" maxlength="40" placeholder="Введіть ваше ім'я">
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input id="password" name="password" type="password" maxlength="20" placeholder="Введіть ваш пароль">
+            </div>
+            <div class="form-group">
+                <label>Стать:</label>
+                <div class="gender-options">
+                    <label><input type="radio" name="gender" value="male"> Чоловіча</label>
+                    <label><input type="radio" name="gender" value="female"> Жіноча</label>
+                    <label><input type="radio" name="gender" value="other"> Інше</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="course">Курс:</label>
+                <select id="course" name="course">
+                    <option value="1">Перший</option>
+                    <option value="2">Другий</option>
+                    <option value="3">Третій</option>
+                    <option value="4">Четвертий</option>
+                    <option value="5">П'ятий</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Дисципліни:</label>
+                <div class="subject-options">
+                    <label><input type="checkbox" name="subject" value="web" checked> WEB-програмування</label>
+                    <label><input type="checkbox" name="subject" value="eldinam"> Технічна електродинаміка</label>
+                    <label><input type="checkbox" name="subject" value="physics"> Фізика</label>
+                    <label><input type="checkbox" name="subject" value="mathematics"> Математика</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="about">Про себе:</label>
+                <textarea id="about" name="about" rows="5" placeholder="Напишіть декілька слів про себе"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="file">Прикріпити файл:</label>
+                <input id="file" type="file" name="file">
+            </div>
+            <div class="buttons">
+                <input type="submit" value="Надіслати">
+                <input type="reset" value="Скинути">
+                <button type="button" onclick="alert('Це звичайна кнопка')">Натисни мене</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

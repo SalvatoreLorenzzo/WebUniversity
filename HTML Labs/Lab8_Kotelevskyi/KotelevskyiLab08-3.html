@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Багаторічні Садові Квіти</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0e6f6;
+            color: #000000;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 35pt;
+            font-weight: bold;
+            color: #8B0000;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .toc {
+            margin-bottom: 40px;
+        }
+        .toc h2 {
+            font-size: 20pt;
+            font-weight: bold;
+            color: #800080;
+            margin-bottom: 15px;
+        }
+        .toc ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        .toc li {
+            margin-bottom: 10px;
+        }
+        .toc a {
+            text-decoration: none;
+            color: #800080;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .toc a:hover {
+            color: #5a005a;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            font-size: 20pt;
+            font-weight: bold;
+            color: #800080;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .section img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+            margin: 20px auto 15px auto;
+        }
+        .section p {
+            font-size: 14pt;
+            font-style: italic;
+            text-align: justify;
+            text-indent: 2%;
+            margin-bottom: 20px;
+        }
+        /* Стилізація кнопки "Догори" */
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s;
+            background-color: #800080;
+            color: #FFFFFF;
+            font-weight: bold;
+            padding: 20px 30px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            font-size: 16pt;
+            z-index: 1000;
+        }
+        #scrollToTopBtn.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        #scrollToTopBtn:hover {
+            background-color: #5a005a;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a id="top"></a>
+        <h1>Багаторічні Садові Квіти</h1>
+
+        <div class="toc">
+            <h2>Зміст</h2>
+            <ul>
+                <li><a href="#lavender">Лаванда</a></li>
+                <li><a href="#hosta">Хоста</a></li>
+                <li><a href="#daylily">День Лілія</a></li>
+                <li><a href="#peony">Піон</a></li>
+                <li><a href="#yucca">Юкка</a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 id="lavender">Лаванда</h2>
+            <img src="image/lavender.jpg" alt="Лаванда">
+            <p>Лаванда є однією з найпопулярніших багаторічних квітів завдяки своєму приємному аромату та витончено-пурпуровим квітам. Вона добре підходить для висаджування в садах та парках, де створює атмосферу спокою та релаксації. Лаванда також використовується в ароматерапії та косметичних продуктах.</p>
+        </div>
+
+        <div class="section">
+            <h2 id="hosta">Хоста</h2>
+            <img src="image/hosta.jpg" alt="Хоста">
+            <p>Хоста відома своїми великими, серцеподібними листками та різноманітністю відтінків зеленого, жовтого та білявого кольорів. Ця рослина прекрасно розвивається у тіньових місцях і додає структуру та текстуру до будь-якого саду. Хости невибагливі в догляді, що робить їх ідеальним вибором для початківців садівників.</p>
+        </div>
+
+        <div class="section">
+            <h2 id="daylily">День Лілія</h2>
+            <img src="image/daylily.jpg" alt="День Лілія">
+            <p>День Лілія відома своїми яскравими, багатокольоровими квітами, які цвітуть протягом усього літа. Вона витримує різні кліматичні умови і притаманна високою стійкістю до хвороб та шкідників. День Лілія є ідеальним вибором для створення барвистих клумб та альтанок.</p>
+        </div>
+
+        <div class="section">
+            <h2 id="peony">Піон</h2>
+            <img src="image/peony.jpg" alt="Піон">
+            <p>Піони цінуються за їхні великі, ароматні квіти та довгий період цвітіння весною та початком літа. Ці рослини символізують багатство та щастя, їх квіти додають елегантності та грації будь-якому саду. Піони потребують добре дренованого ґрунту та сонячного місця для оптимального росту.</p>
+        </div>
+
+        <div class="section">
+            <h2 id="yucca">Юкка</h2>
+            <img src="image/yucca.jpg" alt="Юкка">
+            <p>Юкка відома своїм екзотичним виглядом та витривалістю. Ця рослина прекрасно переносить посушливі умови і додає сучасного шарму до садів та ландшафтних дизайнів. Юкка також використовується як декоративна рослина в контейнерах та парниках.</p>
+        </div>
+    </div>
+
+    <button id="scrollToTopBtn">Догори</button>
+
+    <script>
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        const rootElement = document.documentElement;
+
+        function handleScroll() {
+            const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+            if ((rootElement.scrollTop / scrollTotal) > 0.1) {
+                scrollToTopBtn.classList.add("show");
+            } else {
+                scrollToTopBtn.classList.remove("show");
+            }
+        }
+
+        function scrollToTop() {
+            rootElement.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+        scrollToTopBtn.addEventListener("click", scrollToTop);
+        document.addEventListener("scroll", handleScroll);
+    </script>
+
+</body>
+</html>

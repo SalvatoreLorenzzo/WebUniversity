@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Анкета студента</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-container h2 {
+            margin-top: 0;
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            color: #555;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .gender-options,
+        .course-options,
+        .subject-options {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .gender-options label,
+        .subject-options label {
+            margin-right: 20px;
+        }
+        .buttons {
+            text-align: center;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            margin: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="reset"] {
+            background-color: #f44336;
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            opacity: 0.9;
+        }
+        .file-input {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Анкета студента</h2>
+        <form action="notexisting.html" method="post" target="_blank">
+            <div class="form-group">
+                <label for="name">Ваше ім'я:</label>
+                <input id="name" name="name" type="text" maxlength="40" value="">
+            </div>
+            <div class="form-group">
+                <label>Ваша стать:</label>
+                <div class="gender-options">
+                    <label><input type="radio" name="pol" value="male"> Чоловіча</label>
+                    <label><input type="radio" name="pol" value="female"> Жіноча</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="curs">На якому курсі Ви навчаєтесь?</label>
+                <select id="curs" name="curs">
+                    <option value="1" selected>Перший</option>
+                    <option value="2">Другий</option>
+                    <option value="3">Третій</option>
+                    <option value="4">Четвертий</option>
+                    <option value="5">П'ятий</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Які дисципліни ви вивчаєте на курсі?</label>
+                <div class="subject-options">
+                    <label><input type="checkbox" name="web" value="yes" checked> WEB-програмування</label>
+                    <label><input type="checkbox" name="eldinam" value="yes"> Технічна електродинаміка</label>
+                    <label><input type="checkbox" name="physics" value="yes"> Фізика</label>
+                    <label><input type="checkbox" name="mathematics" value="yes"> Вища математика</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="about">Напишіть декілька слів про себе:</label>
+                <textarea id="about" name="about" rows="6" wrap="off"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="photo">Додайте своє фото:</label>
+                <input id="photo" type="file" name="photo" accept="image/*" class="file-input">
+            </div>
+            <div class="buttons">
+                <input type="submit" value="Відіслати дані">
+                <input type="reset" value="Очистити форму">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма замовлення товару</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-container h2 {
+            margin-top: 0;
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            color: #555;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .payment-options,
+        .additional-info {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .payment-options label,
+        .additional-info label {
+            margin-right: 20px;
+        }
+        .buttons {
+            text-align: center;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            margin: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="reset"] {
+            background-color: #f44336;
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Форма замовлення товару</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="account-number">Номер банківського рахунку:</label>
+                <input id="account-number" name="account-number" type="text" maxlength="20" placeholder="Введіть номер рахунку" required>
+            </div>
+            <div class="form-group">
+                <label for="personal-number">Особистий номер користувача:</label>
+                <input id="personal-number" name="personal-number" type="text" maxlength="20" placeholder="Введіть ваш особистий номер" required>
+            </div>
+            <div class="form-group">
+                <label for="products">Виберіть товари:</label>
+                <select id="products" name="products" multiple size="5" required>
+                    <option value="product1">Товар 1</option>
+                    <option value="product2">Товар 2</option>
+                    <option value="product3">Товар 3</option>
+                    <option value="product4">Товар 4</option>
+                    <option value="product5">Товар 5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comments">Коментарі:</label>
+                <textarea id="comments" name="comments" rows="5" placeholder="Ваші коментарі..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>Вид оплати:</label>
+                <div class="payment-options">
+                    <label><input type="radio" name="payment-method" value="cash" required> Готівковий розрахунок</label>
+                    <label><input type="radio" name="payment-method" value="non-cash"> Безготівковий розрахунок</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Додаткова інформація:</label>
+                <div class="additional-info">
+                    <label><input type="checkbox" name="additional-info" value="balance"> Дані про залишки на рахунку</label>
+                    <label><input type="checkbox" name="additional-info" value="payments"> Список останніх виплат по рахунку</label>
+                </div>
+            </div>
+            <div class="buttons">
+                <input type="submit" value="Надіслати замовлення">
+                <input type="reset" value="Скинути форму">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
