@@ -1,0 +1,96 @@
+// Основні стилі
+$bg-color: #121212;
+$primary-color: #ff6347;
+$hover-color: #e06a4d;
+$container-radius: 15px;
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $bg-color;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: $container-radius;
+  background-color: #1e1e1e;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: $primary-color;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2em;
+}
+
+nav ul li a:hover {
+  color: $primary-color;
+}
+
+.content {
+  margin-top: 40px;
+}
+
+.content h2 {
+  color: $primary-color;
+  text-align: center;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.item {
+  text-align: center;
+}
+
+.item img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.item a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.item p {
+  margin-top: 10px;
+  font-size: 1.1em;
+}
+
+.item:hover img {
+  transform: scale(1.05);
+}
+
+.item:hover p {
+  color: $hover-color;
+}

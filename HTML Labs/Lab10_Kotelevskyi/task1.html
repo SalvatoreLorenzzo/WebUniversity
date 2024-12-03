@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Адаптивна розмітка</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+    }
+    .wrapper {
+      display: grid;
+      grid-gap: 3px;
+      width: 100%;
+      height: 100vh;
+      grid-template-columns: 35% 35% 30%;
+      grid-template-rows: 30% 20% 30% 20%;
+    }
+    .wrapper > div {
+      border: 1px solid #fff;
+    }
+    .blue { background-color: #6baed6; grid-column: 1 / span 2; grid-row: 1; }
+    .gray { background-color: #708090; grid-column: 3 / 4; grid-row: 1 / span 3; }
+    .aqua { background-color: #66c2a4; grid-column: 1; grid-row: 2; }
+    .red { background-color: #fc9272; grid-column: 2; grid-row: 2; }
+    .yellow { background-color: #fdae6b; grid-column: 2; grid-row: 3; }
+    .green { background-color: #41ab5d; grid-column: 1; grid-row: 3; }
+    .orange { background-color: #d94801; grid-column: 1 / span 3; grid-row: 4; }
+
+    /* Адаптивність */
+    @media (max-width: 1200px) {
+      .wrapper {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto auto auto auto;
+      }
+      .blue { grid-column: 1 / span 2; }
+      .gray { grid-column: 2 / 3; grid-row: 2 / span 2; }
+      .yellow { grid-column: 1; grid-row: 4; }
+      .orange { grid-column: 1 / span 2; }
+    }
+
+    @media (max-width: 750px) {
+      .wrapper {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(7, auto);
+      }
+      .blue, .gray, .aqua, .red, .yellow, .green, .orange {
+        grid-column: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="blue"></div>
+    <div class="gray"></div>
+    <div class="aqua"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="yellow"></div>
+    <div class="orange"></div>
+  </div>
+</body>
+</html>

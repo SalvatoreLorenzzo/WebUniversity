@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота 16</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        section {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 20px auto;
+            width: 60%;
+        }
+        .task-title {
+            font-weight: bold;
+        }
+        .number {
+            cursor: pointer;
+            display: inline-block;
+            margin: 5px;
+            font-size: 18px;
+        }
+        button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="location.reload()">Перезавантажити всі завдання</button>
+
+    <section id="task1">
+        <h2>Завдання 1</h2>
+        <img src="cat1.jpg" alt="Зображення 1" width="200" height="300">
+        <img src="cat2.jpg" alt="Зображення 2" width="200" height="300">
+        <img src="cat3.jpg" alt="Зображення 3" width="200" height="300">
+    </section>
+
+    <section id="task2">
+        <h2>Завдання 2</h2>
+        <a href="https://www.youtube.com/watch?v=wE8s993ZV-8" target="_blank">Kittens, so cute!</a><br>
+        <a href="https://www.youtube.com/watch?v=kN78q14mOyo" target="_blank">ねこvlog</a><br>
+        <a href="https://www.youtube.com/watch?v=dwC-XMkTuro" target="_blank">AAAAAAAAA</a>
+    </section>
+
+    <section id="task3">
+        <h2>Завдання 3 та 4</h2>
+        <a href="https://www.youtube.com/shorts/uVtUyfjUCGc" target="_blank">cat meow meow</a><br>
+        <a href="https://www.youtube.com/watch?v=xJtj_PMP36U" target="_blank">Cat fight extreme sound</a><br>
+        <a href="https://www.youtube.com/watch?v=hRlmn_w1qck" target="_blank">Do you still want to take this train?</a>
+    </section>
+
+    <section id="task5">
+        <h2>Завдання 5 та 6</h2>
+        <input type="text" class="task5-input" placeholder="Введіть значення 1"><br>
+        <input type="text" class="task5-input" placeholder="Введіть значення 2"><br>
+        <input type="text" class="task5-input" placeholder="Введіть значення 3"><br>
+        <p id="demo"></p>
+    </section>
+
+    <section id="task7">
+        <h2>Завдання 7</h2>
+        <div id="numbers-container">
+        </div>
+    </section>
+
+
+    <section id="task8">
+        <h2>Завдання 8</h2>
+        <input type="text" data-length="5" class="task8-input" placeholder="Повинно бути 5 символів"><br>
+        <input type="text" data-length="8" class="task8-input" placeholder="Повинно бути 8 символів"><br>
+        <input type="text" data-length="10" class="task8-input" placeholder="Повинно бути 10 символів"><br>
+    </section>
+
+    <section id="task2-1">
+        <h2>Завдання 2.1</h2>
+        <div class="toggle-div" style="background-color: green; width: 100px; height: 100px; border: 1px solid #000; display: inline-block; margin: 10px; text-align: center; line-height: 100px;">Блок 1</div>
+        <div class="toggle-div" style="background-color: green; width: 100px; height: 100px; border: 1px solid #000; display: inline-block; margin: 10px; text-align: center; line-height: 100px;">Блок 2</div>
+        <div class="toggle-div" style="background-color: green; width: 100px; height: 100px; border: 1px solid #000; display: inline-block; margin: 10px; text-align: center; line-height: 100px;">Блок 3</div>
+    </section>
+
+    <script>
+        (function() {
+            const images = document.querySelectorAll('#task1 img');
+            images.forEach(img => {
+                img.onclick = function() {
+                    alert(this.src);
+                };
+            });
+        })();
+
+        (function() {
+            const links = document.querySelectorAll('#task2 a');
+            links.forEach(link => {
+                function addTitle() {
+                    link.title = link.textContent;
+                    link.removeEventListener('mouseover', addTitle);
+                }
+                link.addEventListener('mouseover', addTitle);
+            });
+        })();
+
+        (function() {
+            const links = document.querySelectorAll('#task3 a');
+            links.forEach(link => {
+                function appendHref() {
+                    link.textContent += ` (${link.href})`;
+                }
+                function removeHandler() {
+                    link.removeEventListener('mouseover', appendHref);
+                }
+                link.addEventListener('mouseover', appendHref);
+                link.addEventListener('mouseover', removeHandler);
+            });
+        })();
+
+        (function() {
+            const inputs = document.querySelectorAll('#task5 .task5-input');
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    document.getElementById('demo').textContent = input.value;
+                });
+            });
+        })();
+
+        (function() {
+            const inputs = document.querySelectorAll('#task5 .task5-input');
+            inputs.forEach(input => {
+                function showAlert() {
+                    alert(input.value);
+                    input.removeEventListener('click', showAlert);
+                }
+                input.addEventListener('click', showAlert);
+            });
+        })();
+
+        (function() {
+            const numbersContainer = document.getElementById('numbers-container');
+            const numbers = [];
+            for(let i = 0; i < 3; i++) {
+                const randomNumber = Math.floor(Math.random() * 100) + 1;
+                numbers.push(randomNumber);
+            }
+            numbers.forEach(number => {
+                const p = document.createElement('p');
+                p.classList.add('number');
+                p.textContent = number;
+                p.addEventListener('click', function handler() {
+                    p.textContent = number * number;
+                    p.removeEventListener('click', handler);
+                });
+                numbersContainer.appendChild(p);
+            });
+        })();
+
+        (function() {
+            const inputs = document.querySelectorAll('#task8 .task8-input');
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    const requiredLength = parseInt(input.getAttribute('data-length'));
+                    if(input.value.length === requiredLength) {
+                        input.style.borderColor = 'green';
+                    } else {
+                        input.style.borderColor = 'red';
+                    }
+                });
+            });
+        })();
+
+        (function() {
+            const divs = document.querySelectorAll('#task2-1 .toggle-div');
+            divs.forEach(div => {
+                const originalColor = div.style.backgroundColor || 'transparent';
+                function turnRed() {
+                    div.style.backgroundColor = 'red';
+                    div.removeEventListener('click', turnRed);
+                    div.addEventListener('click', turnOriginal);
+                }
+                function turnOriginal() {
+                    div.style.backgroundColor = originalColor;
+                    div.removeEventListener('click', turnOriginal);
+                    div.addEventListener('click', turnRed);
+                }
+                div.addEventListener('click', turnRed);
+            });
+        })();
+    </script>
+</body>
+</html>
